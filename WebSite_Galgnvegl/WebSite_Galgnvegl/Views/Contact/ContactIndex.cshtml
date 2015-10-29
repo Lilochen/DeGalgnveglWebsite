@@ -1,0 +1,72 @@
+﻿@{
+    //Lilo
+    ViewBag.Title = "Kontakt";
+}
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <title>
+        @ViewBag.Message;
+    </title>
+</head>
+<body>
+    @section featured {
+        <section class="featured">
+            <div class="content-wrapper">
+                <hgroup class="title">
+                    <h1>@ViewBag.Message</h1>
+                </hgroup>
+                <p>
+                <p id="pName">
+                    <label for="tbName">Name: </label>
+                    <input type="text" id="tbName" name="tbName" value="" required />
+                </p>
+                <p id="pEMail">
+                    <label for="mbToEMail">E-Mail: </label>
+                    <input type="email" id="mbToEMail" name="mbToEMail" value="" required />
+                </p>
+                <p id="pTelefon">
+                    <label for="telTel">Telefon (Angabe freiwillig): </label>
+                    <input type="tel" id="telTel" name="telTel" value="" />
+                </p>
+                <p id="pSubject">
+                    <label for="tbSubject">Betreff: </label>
+                    <input type="text" id="tbSubject" name="tbSubject" value="" required />
+                </p>
+                <p id="pMessage">
+                    <label for="taMessage">Nachricht: </label>
+                    <textarea name="taMessage" id="taMessage" col="5" rows="10" overflow="scroll" required></textarea>
+                </p>
+                <p id="pCapcha">
+                    Capcha einfügen!
+                    <label for="tbCapcha">Ich bin kein Roboter:</label>
+                    <input type="text" id="tbCapcha" name="tbCapcha" value="" required />
+                </p>
+                <p>
+                    <input type="submit" id="sbSend" name="sbSend" value="Senden!" />
+                </p>
+            </div>
+        </section>
+    }
+    
+
+    
+</body>
+</html>
+<script type="text/javascript">
+    var Name = document.getElementById("tbName").value;
+    var ToEMail = document.getElementById("mbToEMail").value;
+    var Tel = document.getElementById("telTel").value;
+    var Subject = document.getElementById("tbSubject").value;
+    var Message = document.getElementById("taMessage").value;
+    var Captcha = document.getElementById("tbCaptcha").value;
+    var currentDateTime = @DateTime.Now.ToString("dd.MM.yyyy, HH:mm");
+    function send_EMail()
+    {
+        var sendSubject = Name + ", " + Subject + ", " + currentDateTime;
+        var sendMessage = Name + "\n" + Tel + "\n" + ToEMail + "\n" + Message;
+    }
+</script>
+

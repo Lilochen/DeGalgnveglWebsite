@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Märkte";
+}
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <title>
+        @ViewBag.Message;
+    </title>
+</head>
+<body>
+    @section featured {
+        <section class="featured">
+            <div class="content-wrapper">
+                <hgroup class="title">
+                    <h1>@ViewBag.Message</h1>
+                </hgroup>
+                <p>
+                    <div>
+                        <table>
+                            <tr>
+                                <th>Datum</th>
+                                <th>Markt</th>
+                                <th>Ort</th>
+                            </tr>
+
+                            @*@foreach (var row in db.Query(selectedData))
+                            {
+                                <tr>
+                                    <td>@row.Datum</td>
+                                    <td><a href="@row.Link">@row.Markt</a> </td>
+                                    <td>@row.Ort</td>
+
+                                </tr>
+                            }
+                        </table>*@
+                    </div>
+                </p>
+            </div>
+        </section>
+    }
+</body>
+</html>
+<script type="text/javascript">
+
+</script>

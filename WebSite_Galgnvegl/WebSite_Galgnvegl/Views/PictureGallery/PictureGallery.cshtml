@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Bilder Gallery";
+}
+
+<h2>Bildergallery</h2>
+<hgroup class="title">
+    <h1>@ViewBag.Message</h1>
+</hgroup>
+<br />
+<br />
+<nav>
+    <div class="menu1">
+        @Html.ActionLink("Bilder Gallery", "PictureGallery", "Home")
+    </div>
+</nav>
+
+<nav>
+    <div class="menu1">
+        @Html.ActionLink("Bilder Gallery", "PictureGallery", "Home")
+    </div>
+</nav>
+
+<a href="@Url.Action("Fight", "Home")">
+    <img src="@Url.Content("~/Images/Fight.jpg")" />
+</a>
+<a href="@Url.Action("FunFight", "Home")">
+    <img src="@Url.Content("~/Images/FunFight.jpg")" />
+</a>
+<a href="@Url.Action("FunFight1", "Home")">
+    <img src="@Url.Content("~/Images/FunFight1.jpg")" />
+</a>
+<a href="@Url.Action("Group", "Home")">
+    <img src="@Url.Content("~/Images/Group.jpg")" />
+</a>
+<a href="@Url.Action("Group1", "Home")">
+    <img src="@Url.Content("~/Images/Group1.jpg")" />
+</a>
+<a href="@Url.Action("Schild", "Home")">
+    <img src="@Url.Content("~/Images/Schild.jpg")" />
+</a>
+<a href="@Url.Action("Sewing", "Home")">
+    <img src="@Url.Content("~/Images/Sewing.jpg")" />
+</a>
+<a href="@Url.Action("Sewing1", "Home")">
+    <img src="@Url.Content("~/Images/Sawing1.jpg")" />
+</a>

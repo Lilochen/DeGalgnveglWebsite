@@ -1,0 +1,102 @@
+﻿@{
+    ViewBag.Title = "Das Lebendes Henkers";
+}
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <title>
+        @ViewBag.Message;
+    </title>
+</head>
+<body>
+    @section featured {
+        <section class="featured">
+            <div class="content-wrapper">
+                <hgroup class="title">
+                    <h1>@ViewBag.Message</h1>
+                </hgroup>
+                <p>
+                    Bevor ihr euch mit dem Leben der Henker auseinander setzt, soll gesagt sein, dass eine historische Darstellung (egal welche) sehr stark Zeit und Ortsabhängig ist.
+                    Ein "Deutschland" gab es zu jener Zeit nicht, und die Menschen verliesen meist ihre Heimat nicht. 
+                    Eine mittelalterliche  Darstellung muss also immer eine Zeit und einen Ort enthalten. 
+                    Für die Galgnvegl zu Chemnitz bedeutet das, dass wir eine Darstellung einer Henkersdynastie im 13. Jahrhundert im heutigen mittelsächsischen Raum gewählt haben.
+                    Leider ist es sehr schwer lokale Informationen über den Henker aus dieser Zeit zusammenzutragen.
+                    Wir haben versucht, so viele Informationen wie möglich zu sammeln, diese sind jedoch lokal über das "heilige römische Reich deutscher Nation" verteilt, und betreffen oft nicht genau "unsere" Zeit.
+                    Wir versuchen alle Informationen möglichst genau zu belegen und jeweils die Zeit beziehungsweise den Ort mit anzugeben.
+                    <br />
+                    <br />
+                    Doch soll hier nicht viel geschwafelt werden, schaut euch doch einfach das Leben einer Henkersfamilie im 13. Jahrhundert mal an:
+                    
+                    <div>
+                        <h2>Das 13. Jahrhundert</h2>
+                        <br />
+                        Hier könnt ihr etwas über das 13. Jahrhundert allgemein erfahren<br />
+                        <span class="menu1" style="margin-right:50px">
+                            @Html.ActionLink("Die Allgemeine Situation im 13. Jh", "Situation13thCent", "Representation")
+                        </span>
+                        <br />
+                        <span class="menu1" style="margin-right:50px">
+                            @Html.ActionLink("Das Herrschaftssystem im 13. Jh", "GovSys13thCent", "Representation")
+                        </span>
+                        <br />
+                        <span class="menu1" style="margin-right:50px">
+                            @Html.ActionLink("Das Rechstssystem im 13. Jh", "GovSys13thCent", "Representation")
+                        </span>
+                    </div>
+
+                    <div>
+                        <h2>Der Henker und das Volk</h2>
+                        <br />
+                        Das Leben als Henker war nicht einfach. Hier steht etwas zur sozialen Stellung des Henkers
+                        <br />
+                        <span class="menu1" style="margin-right:50px">
+                            @Html.ActionLink("Die Soziale Stellung des Henkers und seiner Familie", "SocialRank", "Representation")
+                        </span>
+                        <br />
+                        <span class="menu1" style="margin-right:50px">
+                            @Html.ActionLink("Benimmregeln für den Henker und seine Familie", "EtiquettForHangmen", "Representation")
+                        </span>
+                    </div>
+
+                    <div>
+                        <h2>Die Aufgaben des Henkers</h2>
+                        <br />
+                        Wer denkt, dass ein Henker nur gefoltert und hingerichtet hat: weit gefehlt!
+                        <br />
+                        <span class="menu1" style="margin-right:50px">
+                            @Html.ActionLink("Der Henker als Folterer", "AsPunisher", "Representation")
+                        </span>
+                        <br />
+                        <span class="menu1" style="margin-right:50px">
+                            @Html.ActionLink("Der Henker als Vollstrecker", "AsExecuter", "Representation")
+                        </span>                        
+                        <br />
+                        <span class="menu1" style="margin-right:50px">
+                            @Html.ActionLink("Der Henker als Heiler", "AsHealer", "Representation")
+                        </span>                        
+                        <br />
+                        <span class="menu1" style="margin-right:50px">
+                            @Html.ActionLink("Der Henker als Verterinär", "AsVeterian", "Representation")
+                        </span>                        
+                        <br />
+                        <span class="menu1" style="margin-right:50px">
+                            @Html.ActionLink("Der Henker als Aufräumkommando", "AsCleaner", "Representation")
+                        </span>                                
+                    </div>
+                    <div>
+                        <h2></h2>
+                    </div>
+
+                </p>
+                <br />
+                @Html.ActionLink("Zurück", "Index", "Home")
+            </div>
+        </section>
+    }
+</body>
+</html>
+<script type="text/javascript">
+
+</script>
