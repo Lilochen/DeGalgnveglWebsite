@@ -252,6 +252,13 @@
     <Content Include="Views\Representation\Legalsys13thCent.cshtml" />
     <Content Include="Views\Representation\EtiquettForHangmen.cshtml" />
     <Content Include="Views\Representation\SocialRank.cshtml" />
+    <Content Include="Views\AboutUs\Grygr.cshtml" />
+    <Content Include="Views\AboutUs\IgorWorjaz.cshtml" />
+    <Content Include="Views\AboutUs\LamiaDieSanfte.cshtml" />
+    <Content Include="Views\AboutUs\LiselotteVonZellrudndorff.cshtml" />
+    <Content Include="Views\AboutUs\PaterJudas.cshtml" />
+    <Content Include="Views\AboutUs\Simon.cshtml" />
+    <Content Include="Views\AboutUs\SteapaSnotor.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
