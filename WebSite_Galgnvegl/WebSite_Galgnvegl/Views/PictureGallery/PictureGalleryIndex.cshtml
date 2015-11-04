@@ -1,53 +1,143 @@
 ﻿@{
     ViewBag.Title = "Bildergallerie";
 }
-<!DOCTYPE html>
-<html lang="de">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="de-DE">
 <head>
-    <meta charset="utf-8">
-    <title>
-        @ViewBag.Message;
-    </title>
+    <title>CSSApps - CSS Fotogalerie-09 | 5 Themengruppen </title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="Page-topic" content="">
+    <meta name="Content-language" content="DE">
+    <meta name="Robots" content="INDEX,FOLLOW">
+    <meta name="description" content="Eine CSS Bildergalerie mit Themengruppen">
+    <meta name="keywords" content="">
 </head>
-<body>
-    @section featured {
-        <section class="featured">
-            <div class="content-wrapper">
-                <hgroup class="title">
-                    <h1>@ViewBag.Message</h1>
-                </hgroup>
-                <a href="@Url.Action("Fight", "Home")">
-                    <img src="@Url.Content("~/Images/Fight.jpg")" />
-                </a>
-                <a href="@Url.Action("FunFight", "Home")">
-                    <img src="@Url.Content("~/Images/FunFight.jpg")" />
-                </a>
-                <a href="@Url.Action("FunFight1", "Home")">
-                    <img src="@Url.Content("~/Images/FunFight1.jpg")" />
-                </a>
-                <a href="@Url.Action("Group", "Home")">
-                    <img src="@Url.Content("~/Images/Group.jpg")" />
-                </a>
-                <a href="@Url.Action("Group1", "Home")">
-                    <img src="@Url.Content("~/Images/Group1.jpg")" />
-                </a>
-                <a href="@Url.Action("Schild", "Home")">
-                    <img src="@Url.Content("~/Images/Schild.jpg")" />
-                </a>
-                <a href="@Url.Action("Serwing", "Home")">
-                    <img src="@Url.Content("~/Images/Serwing.jpg")" />
-                </a>
-                <a href="@Url.Action("Serwing1", "Home")">
-                    <img src="@Url.Content("~/Images/Serwing1.jpg")" />
-                </a>
-                <p>
-                    Textteil
-                </p>
+<body class="font-selector">
+    <div>
+        <input class="font-switch" type="radio" id="font-k" name="radio0">
+        <input class="font-switch" type="radio" id="font-s" name="radio0" checked="checked">
+        <input class="font-switch" type="radio" id="font-g" name="radio0">
+
+        <div id="page" class="">
+            <div class="appwin">
+                <div class="app">
+                    <h4>Eine Fotogalerie mit Themengruppen</h4>
+
+                    <div class="container">
+                        <div class="gallery">
+
+                            <div class="default"><p>Wählen Sie eine Kategorie<br>Fahren Sie über die Miniaturen um sie zu vergrössern<br>Clicken Sie für eine Ganzeitenansicht</p></div>
+                            <ul>
+                                <li>
+                                    <a class="prevtab" href="#no">&nbsp;&nbsp;Folder1</a><table summary="">
+                                        <tr>
+                                            <td>
+                                                <ul>
+                                                    <li>
+                                                        <a href="~/Images/Fight_mini.jpg">
+                                                            <img class="prev" src="~/Images/Fight_klein.jpg" alt="" title="Bildbeschreibung">
+                                                            <span>
+                                                                <img src="~/Images/Fight_klein.jpg" alt="" title="">
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="~/Images/FunFight_mini.jpg">
+                                                            <img class="prev" src="~/Images/FunFight_klein.jpg" alt="" title="Bildbeschreibung">
+                                                            <span>
+                                                                <img src="~/Images/FunFight_klein.jpg" alt="" title="">
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="~/Images/FunFight1_mini.jpg">
+                                                            <img class="prev" src="~/Images/FunFight1_klein.jpg" alt="" title="Bildbeschreibung">
+                                                            <span>
+                                                                <img src="~/Images/FunFight1_klein.jpg" alt="" title="">
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </li>
+                                <li>
+                                    <a class="prevtab" href="#no">&nbsp;&nbsp;Folder2</a><table summary="">
+                                        <tr>
+                                            <td>
+                                                <ul>
+                                                    <li>
+                                                        <a href="~/Images/Group_mini.jpg">
+                                                            <img class="prev" src="~/Images/Group_klein.jpg" alt="" title="Bildbeschreibung">
+                                                            <span>
+                                                                <img src="~/Images/Group_klein.jpg" alt="" title="">
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="~/Images/Group1_mini.jpg">
+                                                            <img class="prev" src="~/Images/Group1_klein.jpg" alt="" title="Bildbeschreibung">
+                                                            <span>
+                                                                <img src="~/Images/Group1_klein.jpg" alt="" title="">
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </li>
+                                <li>
+                                    <a class="prevtab" href="#no">&nbsp;&nbsp;Folder3</a><table summary="">
+                                        <tr>
+                                            <td>
+                                                <ul>
+                                                    <li>
+                                                        <a href="~/Images/Schild_mini.jpg">
+                                                            <img class="prev" src="~/Images/Schild_klein.jpg" alt="" title="Bildbeschreibung">
+                                                            <span>
+                                                                <img src="~/Images/Schild_klein.jpg" alt="" title="">
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </li>
+                                <li>
+                                    <a class="prevtab" href="#no">&nbsp;&nbsp;Folder4</a><table summary="">
+                                        <tr>
+                                            <td>
+                                                <ul>
+                                                    <li>
+                                                        <a href="~/Images/Sewing_mini.jpg">
+                                                            <img class="prev" src="~/Images/Sewing_klein.jpg" alt="" title="Bildbeschreibung">
+                                                            <span>
+                                                                <img src="~/Images/Sewing_klein.jpg" alt="" title="">
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="~/Images/Sewing1_mini.jpg">
+                                                            <img class="prev" src="~/Images/Sewing1_klein.jpg" alt="" title="Bildbeschreibung">
+                                                            <span>
+                                                                <img src="~/Images/Sewing1_klein.jpg" alt="" title="">
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
-    }
+        </div>
+    </div>
 </body>
 </html>
-<script type="text/javascript">
-
-</script>

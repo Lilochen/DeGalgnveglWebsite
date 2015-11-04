@@ -922,6 +922,156 @@ tr.pager td
         {
             margin: 0;
         }
+        /* Für Bildergallery*/
+                .container {
+            display: block;
+            margin: 2em auto;
+            width: 1000px;
+            height: 390px;
+            border: 1px solid black;
+            position: relative;
+            padding: 5px 0 5px 5px;
+            background: #FFFFFF;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+            -moz-box-shadow: 3px 3px 4px #888;
+            -webkit-box-shadow: 3px 3px 4px #888;
+            box-shadow: 3px 3px 4px #888;
+        }
+
+        .gallery img {
+            border: none;
+        }
+
+        .gallery ul, .gallery ul ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            width: 200px;
+        }
+
+            .gallery ul ul {
+                margin-left: -900px;
+                height: 0;
+                overflow: hidden;
+            }
+
+            .gallery ul li {
+                width: 200px;
+                float: left;
+                background: #eee url(../images/slbar2.gif) no-repeat;
+            }
+
+                .gallery ul li a.prevtab {
+                    display: block;
+                    text-decoration: none;
+                    text-align: left;
+                    font: normal 14px Verdana,Arial,Sans-Serif;
+                    color: black;
+                    height: 31px;
+                    line-height: 31px; /* line-height -> IE needs this for vert_Table_adjust */
+                    background: #eee url(../images/slbar1.gif) no-repeat;
+                }
+
+        .gallery table {
+            margin: 0 0 1px 0;
+            padding: 0;
+            display: none;
+            background: #ccc;
+        }
+
+        .gallery ul li a.prevtab:hover,
+        .gallery ul li:hover a.prevtab {
+            background: transparent;
+        }
+
+        .gallery ul :hover ul {
+            width: 192px; /* special IE calc ??? */
+            height: 230px;
+            overflow: visible;
+            margin: 0;
+            background: transparent;
+        }
+
+        .gallery ul :hover table {
+            display: block;
+            margin-top: -2px;
+            padding: 0;
+            border: 1px solid #000;
+            border-width: 0px 1px 1px 1px;
+            -moz-border-radius: 0 0 6px 6px;
+            -webkit-border-radius: 0 0 6px 6px;
+            border-radius: 0 0 6px 6px;
+        }
+
+        .gallery ul :hover ul li {
+            float: left;
+            display: inline;
+            width: 60px;
+            margin: 3px 0px 3px 3px;
+            background: #ccc;
+            -moz-box-shadow: 1px 1px 2px #444;
+            -webkit-box-shadow: 1px 1px 2px #444;
+            box-shadow: 1px 1px 2px #444;
+        }
+
+        .gallery span {
+            display: none;
+            width: 600px;
+            height: 390px;
+            background: #444;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+        }
+
+            .gallery span img {
+                display: block;
+                margin: 5px auto;
+                height: 380px;
+            }
+
+        .gallery ul ul li a:hover span {
+            display: block;
+            position: absolute;
+            left: 210px;
+            top: 5px;
+            z-index: 90;
+        }
+
+        .gallery img.prev {
+            display: block;
+            height: 35px;
+            border: 2px solid #bbb;
+            margin: 0 auto;
+        }
+
+        .gallery ul ul a:hover img.prev {
+            border: 2px solid #fff;
+        }
+
+        .default {
+            display: block;
+            position: absolute;
+            left: 210px;
+            top: 5px;
+            width: 600px;
+            height: 390px;
+            background: #444;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+            font: normal 0.9em Arial,Sans-Serif;
+            text-align: center;
+            color: white;
+        }
+
+            .default p {
+                padding-top: 120px;
+                line-height: 32px;
+            }
 
 }
+
 
