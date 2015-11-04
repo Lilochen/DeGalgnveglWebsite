@@ -22,5 +22,41 @@ namespace WebSite_Galgnvegl.Controllers
             return View();
         }
 
+        public ActionResult Camp()
+        {
+            ViewBag.Message = "Camp";
+            return View();
+        }
+
+        public ActionResult ChainsOfFaith()
+        {
+            ViewBag.Message = "ChainsOfFaith";
+            return View();
+        }
+
+        public ActionResult LiselottesGewandung()
+        {
+            ViewBag.Message = "LiselottesGewandung";
+            return View();
+        }
+
+        public ActionResult MedivalManufactoring()
+        {
+            ViewBag.Message = "MedivalManufactoring";
+            return View();
+        }
+
+        public ActionResult Workshop()
+        {
+            ViewBag.Message = "Workshop";
+            return View();
+        }
+
+        public ActionResult Theater()
+        {
+            ViewBag.Message = "Theater";
+            return View();
+        }
+
     }
 }
