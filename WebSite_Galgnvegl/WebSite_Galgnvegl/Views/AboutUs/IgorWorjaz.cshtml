@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "IgorWorjaz";
+}
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <title>
+        @ViewBag.Message;
+    </title>
+</head>
+<body>
+    @section featured {
+        <section class="featured">
+            <div class="content-wrapper">
+                <hgroup class="title">
+                    <h1>@ViewBag.Message</h1>
+                </hgroup>
+                <p>
+                    ich bin Igor
+                    <nav class="content-wrapper">
+                        <span class="menu2" style="margin-right:50px">
+                            @Html.ActionLink("zurück", "AboutUsIndex", "AboutUs")<br />
+                        </span>
+                    </nav>
+                </p>
+            </div>
+        </section>
+    }
+</body>
+</html>
+<script type="text/javascript">
+
+</script>

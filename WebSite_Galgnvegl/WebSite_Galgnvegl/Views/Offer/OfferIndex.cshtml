@@ -17,7 +17,32 @@
                     <h1>@ViewBag.Message</h1>
                 </hgroup>
                 <p>
-                    Textteil
+                    <nav class="content-wrapper">
+                        <span class="menu2" style="margin-right:50px">
+                            @Html.ActionLink("Camp", "Camp", "Offer")<br />
+                        </span>
+                        <span class="menu2" style="margin-right:50px">
+                            @Html.ActionLink("Chains of Faith", "ChainsOfFaith", "Offer")<br />
+                        </span>
+                        <span class="menu2" style="margin-right:50px">
+                            @Html.ActionLink("Liselottes Gewandung", "LiselottesGewandung", "Offer")<br />
+                        </span>
+                        <span class="menu2" style="margin-right:50px">
+                            @Html.ActionLink("Medival Manufactoring", "MedivalManufactoring", "Offer")<br />
+                        </span>
+                        <span class="menu2" style="margin-right:50px">
+                            @Html.ActionLink("Workshop", "Workshop", "Offer")<br />
+                        </span>
+                        <span class="menu2" style="margin-right:50px">
+                            @Html.ActionLink("Theater", "Theater", "Offer")<br />
+                        </span>
+                        <span class="menu2" style="margin-right:50px">
+                            <a href="http://www.brimborium.org/">Brimborium</a><br />
+                        </span>
+                        <span class="menu2" style="margin-right:50px">
+                            @Html.ActionLink("zurück", "Index", "Home")<br />
+                        </span>
+                    </nav>
                 </p>
             </div>
         </section>
