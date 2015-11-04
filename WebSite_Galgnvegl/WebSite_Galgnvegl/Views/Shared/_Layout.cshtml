@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@inherits System.Web.Mvc.WebViewPage<dynamic>
+
+<!DOCTYPE html>
 <html lang="de">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -13,14 +15,16 @@
     <header>
         <div class="content-wrapper">
             <div class="float-left">
-                    <p><a href="@Url.Action("Index", "Home")">
+                <p>
+                    <a href="@Url.Action("Index", "Home")">
                         <img class="image" src="@Url.Content("~/Images/LogoDGvzC_Banner.png")" />
-                    </a></p>
- 
+                    </a>
+                </p>
+
                 <span>
                     <img src="~/Images/Kette_ganz_klein.jpg" />
                 </span>
-            </div>    
+            </div>
         </div>
     </header>
     <div id="body">
@@ -30,36 +34,39 @@
             <span class="menu1" style="margin-right:50px">
                 @Html.ActionLink("Home", "Index", "Home")
             </span>
-            <br />
+            </br>
             <span class="menu1" style="margin-right:50px">
                 @Html.ActionLink("Das sind wir", "AboutUsIndex", "AboutUs")
             </span>
-            <br />
+            </br>
             <span class="menu1" style="margin-right:50px">
                 @Html.ActionLink("Der Henker im 13. Jh", "RepresentationIndex", "Representation")
             </span>
-            <br />
+            </br>
             <span class="menu1" style="margin-right:50px">
                 @Html.ActionLink("Angebot", "OfferIndex", "Offer")
             </span>
-            <br />
+            </br>
             <span class="menu1" style="margin-right:50px">
                 @Html.ActionLink("Märkte", "MarketIndex", "Markets")
             </span>
-            <br />
+            </br>
             <span class="menu1" style="margin-right:50px">
                 @Html.ActionLink("Bildergalerie", "PictureGalleryIndex", "PictureGallery")
             </span>
-            <br />
+            </br>
             <span class="menu1" style="margin-right:50px">
                 <a href="http://www.guestbook-free.com/books3/degalgnvegl/">Gästebuch</a>
                 @*Nicht schön, aber selten*@
             </span>
-            <br />
+            </br>
             <span class="menu1" style="margin-right:50px">
                 @Html.ActionLink("Kontakt", "ContactIndex", "Contact")
             </span>
         </nav>
+        @* <section id="login">
+                @Html.Partial("_LoginPartial")
+            </section>*@
     </div>
     @*  </div>*@
     @RenderSection("featured", required: false)
@@ -67,18 +74,18 @@
     <section class="content-wrapper main-content clear-fix">
         @RenderBody()
     </section>
-        <footer>
-            <div class="content-wrapper">
-                <span class="float-left">
-                    De Galgnvegl zu Chemnitz- @DateTime.Now.Year - All rights reserved
-                </span>
+    <footer>
+        <div class="content-wrapper">
+            <span class="float-left">
+                De Galgnvegl zu Chemnitz- @DateTime.Now.Year - All rights reserved
+            </span>
 
-                <span style="margin-left: 50px">
-                    @Html.ActionLink("Impressum", "Impressum", "Shared")
-                    @Html.ActionLink("Datenschutzerklärung", "Datenschutzerklaerung", "Shared")
-                </span>
-            </div>
-        </footer>
+            <span style="margin-left: 50px">
+                @Html.ActionLink("Impressum", "Impressum", "Shared")
+                @Html.ActionLink("Datenschutzerklärung", "Datenschutzerklaerung", "Shared")
+            </span>
+        </div>
+    </footer>
 
     @Scripts.Render("~/bundles/jquery")
     @RenderSection("scripts", required: false)

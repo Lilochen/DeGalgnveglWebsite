@@ -123,17 +123,20 @@ a
 
     a:link
     {
-        color: #0099FF;
+        color: darkred;
+        width: 200px;
     }
 
     a:visited
     {
-        color: #001cfe;
+        color: white;
+        width: 300px;
     }
 
     a:hover
     {
-        background-color: #FFFFFF;
+        color: red;
+        width: 310px;
     }
 
 header, footer, hgroup, nav, section
@@ -143,10 +146,18 @@ header, footer, hgroup, nav, section
     margin-bottom: 25px;
 }
 
+nav{
+    float: left;
+    padding-left: 20px;
+    width: 300px;
+    height: 400px;
+    text-decoration: none;
+}
+
 mark
 {
     font-weight: bold;
-    text-decoration: underline;
+    text-decoration: none;
     text-decoration-color: #FFFFFF;
 }
 
@@ -190,7 +201,7 @@ mark
 {
     font-size: 1.5em;
     font-weight: 600;
-
+    text-decoration: none;
     margin: 0 0 5px;
     padding: 0;
     text-align: left;
@@ -205,7 +216,7 @@ mark
         .menu1 a:hover
         {
             color: #CC0000;
-            text-decoration: underline;
+            text-decoration: none;
         }
 
 
@@ -229,7 +240,7 @@ mark
         .menu2 a:hover
         {
             color: #FFFFFF;
-            text-decoration: underline;
+            text-decoration: none;
         }
 
 /* main layout
@@ -237,7 +248,7 @@ mark
 
 .content-wrapper
 {
-    margin: auto;
+    float: left;
     max-width: 1500px;
 }
 
@@ -280,6 +291,7 @@ footer
     font-family: 'Old English Text MT';
     font-size:2.3em;
     margin: 0;
+    position: absolute;
 }
 
     .site-title a, .site-title:hover, .site-title a:active
@@ -288,6 +300,7 @@ footer
         color: #CC0000;
         outline: none;
         text-decoration:none;
+        position: absolute;
     }
 
 
@@ -340,6 +353,9 @@ footer
     margin: 0 0 5px;
     padding: 0;
     text-align: center;
+    text-decoration: none;
+    width: 200px;
+    height: 50px;
 }
 
     #menu a
@@ -347,12 +363,16 @@ footer
         background: none;
         color: #FFFFFF;
         text-decoration: none;
+        width: 200px;
+        height: 50px;
     }
 
         #menu a:hover
         {
             color: #CC0000;
-            text-decoration: underline;
+            text-decoration: none;
+            width: 200px;
+            height: 50px;
         }
 
 /* page elements
@@ -922,133 +942,120 @@ tr.pager td
         {
             margin: 0;
         }
-        /* Für Bildergallery*/
-                .container {
+
+}
+
+ .Gallery {
             display: block;
-            margin: 2em auto;
-            width: 1000px;
+            width: 900px;
             height: 390px;
-            border: 1px solid black;
             position: relative;
+            margin-left: 50px;
             padding: 5px 0 5px 5px;
-            background: #FFFFFF;
-            -moz-border-radius: 5px;
-            -webkit-border-radius: 5px;
-            border-radius: 5px;
-            -moz-box-shadow: 3px 3px 4px #888;
-            -webkit-box-shadow: 3px 3px 4px #888;
-            box-shadow: 3px 3px 4px #888;
+            background: white;
         }
 
-        .gallery img {
+        .Gallery_new img {
             border: none;
+            max-width: 500px;
+            max-height:281px;
+            position: absolute;
+            /*padding-left: 5px; ?*/
+            overflow: hidden;
         }
 
-        .gallery ul, .gallery ul ul {
+        .Gallery_new ul, .gallery ul ul {
             list-style: none;
             margin: 0;
             padding: 0;
-            width: 200px;
+            width: 300px;
+            height: 390px;
+            /*background: white;*/
         }
 
-            .gallery ul ul {
-                margin-left: -900px;
-                height: 0;
-                overflow: hidden;
-            }
-
-            .gallery ul li {
-                width: 200px;
+            .Gallery_new ul li {
+                width: 300px;
                 float: left;
-                background: #eee url(../images/slbar2.gif) no-repeat;
+                background: white;
+                padding-right: 5px;
+                padding-top: 10px;
             }
 
-                .gallery ul li a.prevtab {
+                .Gallery_new ul li a.Folder {
                     display: block;
                     text-decoration: none;
                     text-align: left;
-                    font: normal 14px Verdana,Arial,Sans-Serif;
-                    color: black;
-                    height: 31px;
-                    line-height: 31px; /* line-height -> IE needs this for vert_Table_adjust */
-                    background: #eee url(../images/slbar1.gif) no-repeat;
+                    font: bold 14px Verdana,Arial,Sans-Serif;
+                    color: red;
+                    height: 26px;
+                    line-height: 26px;
+                    background: white;
                 }
 
-        .gallery table {
+        .Gallery_new table {
             margin: 0 0 1px 0;
             padding: 0;
             display: none;
-            background: #ccc;
+            background: white;
         }
 
-        .gallery ul li a.prevtab:hover,
-        .gallery ul li:hover a.prevtab {
-            background: transparent;
+        .Gallery_new ul li a.Folder:hover,
+        .Gallery_new ul li:hover a.Folder {
+            /*background: transparent;*/
+            border: 1px solid black;
         }
 
-        .gallery ul :hover ul {
-            width: 192px; /* special IE calc ??? */
+        .Gallery_new ul :hover ul {
+            width: 192px;
             height: 230px;
-            overflow: visible;
-            margin: 0;
-            background: transparent;
+            margin: 2px;
+            background: white;
         }
 
-        .gallery ul :hover table {
+        .Gallery_new ul :hover table {
             display: block;
-            margin-top: -2px;
-            padding: 0;
-            border: 1px solid #000;
-            border-width: 0px 1px 1px 1px;
-            -moz-border-radius: 0 0 6px 6px;
-            -webkit-border-radius: 0 0 6px 6px;
-            border-radius: 0 0 6px 6px;
+            margin-top: -40px;
+            padding: 10px;
         }
 
-        .gallery ul :hover ul li {
-            float: left;
+        .Gallery_new ul :hover ul li {
             display: inline;
-            width: 60px;
+            float: left;
             margin: 3px 0px 3px 3px;
-            background: #ccc;
-            -moz-box-shadow: 1px 1px 2px #444;
-            -webkit-box-shadow: 1px 1px 2px #444;
-            box-shadow: 1px 1px 2px #444;
+            background: white;
+            width: 60px;
+            height: 25px;
         }
 
-        .gallery span {
+        .Gallery_new span {
             display: none;
             width: 600px;
             height: 390px;
-            background: #444;
-            -moz-border-radius: 5px;
-            -webkit-border-radius: 5px;
-            border-radius: 5px;
+            background: white;
         }
 
-            .gallery span img {
-                display: block;
+            .Gallery_new span img {
+                /*display: block;
                 margin: 5px auto;
-                height: 380px;
+                height: 380px;*/
             }
 
-        .gallery ul ul li a:hover span {
+        .Gallery_new ul ul li a:hover span {
             display: block;
             position: absolute;
             left: 210px;
             top: 5px;
-            z-index: 90;
+            /*z-index: 90;*/
         }
 
-        .gallery img.prev {
+        .Gallery_new img.vorschau {
             display: block;
             height: 35px;
-            border: 2px solid #bbb;
             margin: 0 auto;
         }
 
-        .gallery ul ul a:hover img.prev {
-            border: 2px solid #fff;
+        .Gallery_new ul ul a:hover img.vorschau {
+            border: 2px solid red;
         }
 
         .default {
@@ -1058,20 +1065,18 @@ tr.pager td
             top: 5px;
             width: 600px;
             height: 390px;
-            background: #444;
+            background: white;
             -moz-border-radius: 5px;
             -webkit-border-radius: 5px;
             border-radius: 5px;
             font: normal 0.9em Arial,Sans-Serif;
             text-align: center;
-            color: white;
+            color: black;
         }
 
             .default p {
-                padding-top: 120px;
+                padding-top: 20px;
                 line-height: 32px;
             }
 
 }
-
-
