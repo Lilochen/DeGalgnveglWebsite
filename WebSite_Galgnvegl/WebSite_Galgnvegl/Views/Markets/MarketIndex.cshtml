@@ -1,5 +1,9 @@
-﻿@{
+﻿@model WebSite_Galgnvegl.Models.SharedModel
+@{
     ViewBag.Title = "Märkte";
+    
+    var 
+    
 }
 <!DOCTYPE html>
 <html lang="de">
@@ -25,7 +29,7 @@
                                 <th>Ort</th>
                             </tr>
 
-                            @*@foreach (var row in db.Query(selectedData))
+                            @foreach (var row in db.Query(selectedData))
                             {
                                 <tr>
                                     <td>@row.Datum</td>
@@ -34,7 +38,9 @@
 
                                 </tr>
                             }
-                        </table>*@
+                                @*Bei Änderung der Datenbank: "SQL Server Object Explorer" öffnen --> Markttermine --> Tables --> dbo.tableMarktermine --> Rechtsklick:"View Data" :-D
+                                Bei Hinzufügen einer weiteren Tabelle: AKTUALISIEREN, NICHT SPEICHERN!!! Änderungen werden in die sdf gespeichert. :-D*@
+                        </table>
                     </div>
                 </p>
             </div>

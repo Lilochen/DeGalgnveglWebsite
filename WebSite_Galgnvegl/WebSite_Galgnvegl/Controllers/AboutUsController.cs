@@ -21,6 +21,48 @@ namespace WebSite_Galgnvegl.Controllers
             ViewBag.Message = "Das sind wir:";
             return View();
         }
+        
+        public ActionResult IgorWorjaz()
+        {
+            ViewBag.Message = "Igor Worjaz";
+            return View();
+        }
+
+        public ActionResult SteapaSnotor()
+        {
+            ViewBag.Message = "Steapa Snotor";
+            return View();
+        }
+
+        public ActionResult LiselotteVonZellrudndorff()
+        {
+            ViewBag.Message = "Liselotte von Zellrudndorff";
+            return View();
+        }
+
+        public ActionResult LamiaDieSanfte()
+        {
+            ViewBag.Message = "Lamia die Sanfte";
+            return View();
+        }
+
+        public ActionResult Simon()
+        {
+            ViewBag.Message = "Simon";
+            return View();
+        }
+
+        public ActionResult Grygr()
+        {
+            ViewBag.Message = "Grygr";
+            return View();
+        }
+
+        public ActionResult PaterJudas()
+        {
+            ViewBag.Message = "Pater Judas";
+            return View();
+        }
 
     }
 }
