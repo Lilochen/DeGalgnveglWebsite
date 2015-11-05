@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebSite_Galgnvegl.Models;
 
 namespace WebSite_Galgnvegl.Controllers
 {
@@ -11,6 +12,7 @@ namespace WebSite_Galgnvegl.Controllers
         //
         // GET: /Markets/
 
+        WebSite_Galgnvegl.Models.SharedModel model = new Models.SharedModel();
         public ActionResult Index()
         {
             return View();
@@ -19,7 +21,7 @@ namespace WebSite_Galgnvegl.Controllers
         public ActionResult MarketIndex()
         {
             ViewBag.Message = "Hier könnt ihr uns treffen:";
-            return View();
+            return View(new SharedModel());
         }
 
     }

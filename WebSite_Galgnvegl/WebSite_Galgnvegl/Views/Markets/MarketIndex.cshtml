@@ -1,9 +1,6 @@
 ﻿@model WebSite_Galgnvegl.Models.SharedModel
 @{
-    ViewBag.Title = "Märkte";
-    
-    var 
-    
+    ViewBag.Title = "Märkte";    
 }
 <!DOCTYPE html>
 <html lang="de">
@@ -24,12 +21,13 @@
                     <div>
                         <table>
                             <tr>
-                                <th>Datum</th>
+                                <th>Datum von:</th>
+                                <th>bis:</th>
                                 <th>Markt</th>
                                 <th>Ort</th>
                             </tr>
 
-                            @foreach (var row in db.Query(selectedData))
+                            @foreach (var row in Model.db.Query(Model.selectedData))
                             {
                                 <tr>
                                     <td>@row.Datum</td>
