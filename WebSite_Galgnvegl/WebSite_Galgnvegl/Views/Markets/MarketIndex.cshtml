@@ -1,7 +1,9 @@
 ﻿@model WebSite_Galgnvegl.Models.SharedModel
 @{
-    ViewBag.Title = "Märkte";    
+    ViewBag.Title = "Märkte";
 }
+
+@*//var selectedData = db.Query("SELECT * FROM Markttermine1");*@
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -17,6 +19,7 @@
                 <hgroup class="title">
                     <h1>@ViewBag.Message</h1>
                 </hgroup>
+                
                 <p>
                     <div>
                         <table>
@@ -30,16 +33,18 @@
                             @foreach (var row in Model.db.Query(Model.selectedData))
                             {
                                 <tr>
-                                    <td>@row.Datum</td>
-                                    <td><a href="@row.Link">@row.Markt</a> </td>
+                                    <td>@row.Datum_von </td>
+                                    <td>@row.Datum_bis </td>
+                                    <td><a href="@row.Link">@row.Marktname</a> </td>
                                     <td>@row.Ort</td>
 
                                 </tr>
                             }
-                                @*Bei Änderung der Datenbank: "SQL Server Object Explorer" öffnen --> Markttermine --> Tables --> dbo.tableMarktermine --> Rechtsklick:"View Data" :-D
-                                Bei Hinzufügen einer weiteren Tabelle: AKTUALISIEREN, NICHT SPEICHERN!!! Änderungen werden in die sdf gespeichert. :-D*@
+                                
                         </table>
                     </div>
+                    @*Bei Änderung der Datenbank: "SQL Server Object Explorer" öffnen --> Markttermine --> Tables --> dbo.tableMarktermine --> Rechtsklick:"View Data" :-D
+                      Bei Hinzufügen einer weiteren Tabelle: AKTUALISIEREN, NICHT SPEICHERN!!! Änderungen werden in die sdf gespeichert. :-D*@
                 </p>
             </div>
         </section>
