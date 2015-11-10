@@ -4,6 +4,7 @@
     color: #232323;
     background-color: #fff;
     position: absolute;
+    max-width: 1700px;
     margin-left: 10px;
     margin-right: 10px; 
 }
@@ -92,6 +93,7 @@ h1
 {
     border-bottom: groove, 3px, #CC0000;
     font-size: 450%;
+    margin-top: -65px;
 }
 
 h2
@@ -205,12 +207,15 @@ mark
     margin: 0 0 5px;
     padding: 0;
     text-align: left;
+    color: white;
+
 }
     .menu1 a
     {
         background: none;
         color: #FFFFFF;
         text-decoration: none;
+        color: darkred;
     }
 
         .menu1 a:hover
@@ -225,7 +230,6 @@ mark
     border-bottom: groove, 3px, #CC0000;
     font-family: 'Old English Text MT';
     font-size: 250%;
-    font-weight: 600;
     margin: 0 0 5px;
     padding: 0;
     text-align: left;
@@ -249,7 +253,7 @@ mark
 .content-wrapper
 {
     float: left;
-    max-width: 1500px;
+    max-width: 2000px;
 }
 
 #body
@@ -356,6 +360,7 @@ footer
     text-decoration: none;
     width: 200px;
     height: 50px;
+    
 }
 
     #menu a
@@ -382,6 +387,8 @@ footer
 .featured
 {
     background-color: black;
+    margin-left: 350px;
+    max-width: 1000px;
 }
 
     .featured.content-wrapper
@@ -952,7 +959,7 @@ tr.pager td
             position: relative;
             margin-left: 50px;
             padding: 5px 0 5px 5px;
-            background: white;
+            background: black;
         }
 
         .Gallery_new img {
@@ -976,7 +983,7 @@ tr.pager td
             .Gallery_new ul li {
                 width: 300px;
                 float: left;
-                background: white;
+                background: black;
                 padding-right: 5px;
                 padding-top: 10px;
             }
@@ -989,14 +996,14 @@ tr.pager td
                     color: red;
                     height: 26px;
                     line-height: 26px;
-                    background: white;
+                    background: black;
                 }
 
         .Gallery_new table {
             margin: 0 0 1px 0;
             padding: 0;
             display: none;
-            background: white;
+            background: black;
         }
 
         .Gallery_new ul li a.Folder:hover,
@@ -1009,7 +1016,7 @@ tr.pager td
             width: 192px;
             height: 230px;
             margin: 2px;
-            background: white;
+            background: black;
         }
 
         .Gallery_new ul :hover table {
@@ -1022,7 +1029,7 @@ tr.pager td
             display: inline;
             float: left;
             margin: 3px 0px 3px 3px;
-            background: white;
+            background: black;
             width: 60px;
             height: 25px;
         }
@@ -1031,7 +1038,7 @@ tr.pager td
             display: none;
             width: 600px;
             height: 390px;
-            background: white;
+            background: black;
         }
 
             .Gallery_new span img {
@@ -1065,18 +1072,16 @@ tr.pager td
             top: 5px;
             width: 600px;
             height: 390px;
-            background: white;
+            background: black;
             -moz-border-radius: 5px;
             -webkit-border-radius: 5px;
             border-radius: 5px;
             font: normal 0.9em Arial,Sans-Serif;
             text-align: center;
-            color: black;
+            color: white;
         }
 
             .default p {
                 padding-top: 20px;
                 line-height: 32px;
             }
-
-}
