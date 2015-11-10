@@ -207,22 +207,31 @@ mark
     margin: 0 0 5px;
     padding: 0;
     text-align: left;
-    color: white;
+    background-color: black;
+    min-width: 500px;
 
 }
     .menu1 a
     {
-        background: none;
-        color: #FFFFFF;
+        background-color: lightgray;
         text-decoration: none;
         color: darkred;
     }
 
         .menu1 a:hover
         {
-            color: #CC0000;
+            color: white;
             text-decoration: none;
+            background-color: black;
         }
+
+            .menu1 a:active
+            {
+                color: blue;
+                text-decoration: none;
+                background-color: black;
+            }
+        
 
 
 .menu2
@@ -236,15 +245,23 @@ mark
 }
     .menu2 a
     {
-        background: none;
-        color: #CC0000;
+        background-color: lightgray;
         text-decoration: none;
+        color: darkred;
     }
 
         .menu2 a:hover
         {
-            color: #FFFFFF;
+            color: white;
             text-decoration: none;
+            background-color: black;
+        }
+
+        .menu2 a:active
+        {
+                color: blue;
+                text-decoration: none;
+                background-color: black;
         }
 
 /* main layout
@@ -276,6 +293,7 @@ mark
 header.content.-wrapper
 {
     padding-top: 20px;
+    width: 300px;
 }
 
 footer
@@ -1085,3 +1103,4 @@ tr.pager td
                 padding-top: 20px;
                 line-height: 32px;
             }
+
