@@ -12,6 +12,46 @@
     </title>
 </head>
 <body>
+
+            <section class="featured">
+                <div class="content-wrapper">
+                    <hgroup class="title">
+                        <h1>@ViewBag.Message</h1>
+                    </hgroup>
+                    <p>
+                        <h1>Kontaktformular</h1>
+                        <form method="post" action="~/kontakt.php">
+                            <table border="0">
+                                <tr>
+                                    <td>Name:</td>
+                                    <td><input type="text" name="Name" /></td>
+                                </tr>
+                                <tr>
+                                    <td>Email:</td>
+                                    <td><input type="text" name="email" /></td>
+                                </tr>
+                                <tr>
+                                    <td>Telefon:</td>
+                                    <td><input type="tel" name="Telefon" /></td>
+                                </tr>
+                                <tr>
+                                    <td>Betreff:</td>
+                                    <td><input type="text" name="Betreff" /></td>
+                                </tr>
+                                <tr>
+                                    <td>Nachricht:</td>
+                                    <td><textarea name="Nachricht" cols="45" rows="15" overflow="scroll"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><input type="submit" value="abschicken" /><input type="reset" value="zurücksetzen" /></td>
+                                </tr>
+                            </table>
+                        </form>
+                    </p>
+                </div>
+            </section>
+
     @section featured {
         <section class="featured">
             <div class="content-wrapper">
