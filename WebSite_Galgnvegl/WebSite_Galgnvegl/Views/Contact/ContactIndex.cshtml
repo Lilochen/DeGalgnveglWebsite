@@ -12,101 +12,86 @@
     </title>
 </head>
 <body>
-
-            <section class="featured">
-                <div class="content-wrapper">
+    @section featured {
+        <section class="featured">
+            <div class="content-wrapper">
+                <form method="post" action="mailto:degalgenvegl@gmail.com">
                     <hgroup class="title">
                         <h1>@ViewBag.Message</h1>
                     </hgroup>
                     <p>
-                        <h1>Kontaktformular</h1>
-                        <form method="post" action="~/kontakt.php">
-                            <table border="0">
-                                <tr>
-                                    <td>Name:</td>
-                                    <td><input type="text" name="Name" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Email:</td>
-                                    <td><input type="text" name="email" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Telefon:</td>
-                                    <td><input type="tel" name="Telefon" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Betreff:</td>
-                                    <td><input type="text" name="Betreff" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Nachricht:</td>
-                                    <td><textarea name="Nachricht" cols="45" rows="15" overflow="scroll"></textarea></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td><input type="submit" value="abschicken" /><input type="reset" value="zurücksetzen" /></td>
-                                </tr>
-                            </table>
-                        </form>
+                    <p id="pName">
+                        <label for="tbName">Name: </label>
+                        <input type="text" id="tbName" name="tbName" value="" required />
                     </p>
-                </div>
-            </section>
-
-    @section featured {
-        <section class="featured">
-            <div class="content-wrapper">
-                <hgroup class="title">
-                    <h1>@ViewBag.Message</h1>
-                </hgroup>
-                <p>
-                <p id="pName">
-                    <label for="tbName">Name: </label>
-                    <input type="text" id="tbName" name="tbName" value="" required />
-                </p>
-                <p id="pEMail">
-                    <label for="mbToEMail">E-Mail: </label>
-                    <input type="email" id="mbToEMail" name="mbToEMail" value="" required />
-                </p>
-                <p id="pTelefon">
-                    <label for="telTel">Telefon (Angabe freiwillig): </label>
-                    <input type="tel" id="telTel" name="telTel" value="" />
-                </p>
-                <p id="pSubject">
-                    <label for="tbSubject">Betreff: </label>
-                    <input type="text" id="tbSubject" name="tbSubject" value="" required />
-                </p>
-                <p id="pMessage">
-                    <label for="taMessage">Nachricht: </label>
-                    <textarea name="taMessage" id="taMessage" col="5" rows="10" overflow="scroll" required></textarea>
-                </p>
-                <p id="pCapcha">
-                    Capcha einfügen!
-                    <label for="tbCapcha">Ich bin kein Roboter:</label>
-                    <input type="text" id="tbCapcha" name="tbCapcha" value="" required />
-                </p>
-                <p>
-                    <input type="submit" id="sbSend" name="sbSend" value="Senden!" />
-                </p>
+                    <p id="pEMail">
+                        <label for="mbToEMail">E-Mail: </label>
+                        <input type="email" id="mbToEMail" name="mbToEMail" value="" required />
+                    </p>
+                    <p id="pTelefon">
+                        <label for="telTel">Telefon (Angabe freiwillig): </label>
+                        <input type="tel" id="telTel" name="telTel" value="" />
+                    </p>
+                    <p id="pSubject">
+                        <label for="tbSubject">Betreff: </label>
+                        <input type="text" id="tbSubject" name="tbSubject" value="" required />
+                    </p>
+                    <p id="pMessage">
+                        <label for="taMessage">Nachricht: </label>
+                        <textarea name="taMessage" id="taMessage" col="5" rows="10" overflow="scroll" required></textarea>
+                    </p>
+                    <form name="review" ACTION="newpg.html" METHOD="POST" onsubmit="return checkform(this);" required>
+                        <font color="#DD0000">Enter Code ></font> <span id="txtCaptchaDiv" style="background-color:#A51D22;color:#FFF;padding:5px"></span>
+                        <input type="hidden" id="txtCaptcha" />
+                        <input type="text" name="txtInput" id="txtInput" size="15" />
+                    </form>
+                    <p>
+                        <input type="submit" id="sbSend" name="sbSend" value="Senden!" onklick="return send_EMail(this);" />
+                    </p>
+                </form>
             </div>
         </section>
     }
-    
-
-    
+    <script type="text/javascript">
+        function checkform(theform){
+            var why = "";
+            if(theform.txtInput.value == ""){
+                why += "- Security code should not be empty.\n";
+            }
+            if(theform.txtInput.value != ""){
+                if(ValidCaptcha(theform.txtInput.value) == false){
+                    why += "- Security code did not match.\n";
+                }
+            }
+            if(why != ""){
+                alert(why);
+                return false;
+            }
+        }
+        //Generates the captcha function
+        var a = Math.ceil(Math.random() * 9)+ '';
+        var b = Math.ceil(Math.random() * 9)+ '';
+        var c = Math.ceil(Math.random() * 9)+ '';
+        var d = Math.ceil(Math.random() * 9)+ '';
+        var e = Math.ceil(Math.random() * 9)+ '';
+        var code = a + b + c + d + e;
+        document.getElementById("txtCaptcha").value = code;
+        document.getElementById("txtCaptchaDiv").innerHTML = code;
+        // Validate the Entered input aganist the generated security code function
+        function ValidCaptcha(){
+            var str1 = removeSpaces(document.getElementById('txtCaptcha').value);
+            var str2 = removeSpaces(document.getElementById('txtInput').value);
+            if (str1 == str2) {
+                return true;
+            } else {
+                printf("Sie haben die Falsche Zahlenfolge eingegeben. Bitte versuchen Sie es nochmal.");
+                return false;
+                }
+            }
+            // Remove the spaces from the entered and generated code
+            function removeSpaces(string){
+            return string.split(' ').join('');
+        }
+    </script>
 </body>
 </html>
-<script type="text/javascript">
-    var Name = document.getElementById("tbName").value;
-    var ToEMail = document.getElementById("mbToEMail").value;
-    var Tel = document.getElementById("telTel").value;
-    var Subject = document.getElementById("tbSubject").value;
-    var Message = document.getElementById("taMessage").value;
-    var Captcha = document.getElementById("tbCaptcha").value;
-    var currentDateTime = @DateTime.Now.ToString("dd.MM.yyyy, HH:mm");
-    function send_EMail()
-    {
-        var sendSubject = Name + ", " + Subject + ", " + currentDateTime;
-        var sendMessage = Name + "\n" + Tel + "\n" + ToEMail + "\n" + Message;
-    }
-</script>
-

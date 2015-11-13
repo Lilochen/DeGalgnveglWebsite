@@ -116,11 +116,11 @@ h4, h5, h6
 
 a
 {
-    color: #0099FF;
+    color: darkred;
     outline: none;
     padding-left: 3px;
     padding-right: 3px;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
     a:link
@@ -213,7 +213,7 @@ mark
 }
     .menu1 a
     {
-        background-color: lightgray;
+        background-color: black;
         text-decoration: none;
         color: darkred;
     }
@@ -232,20 +232,17 @@ mark
                 background-color: black;
             }
         
-
-
 .menu2
 {
     border-bottom: groove, 3px, #CC0000;
     font-family: 'Old English Text MT';
-    font-size: 250%;
+    font-size: 300%;
     margin: 0 0 5px;
     padding: 0;
     text-align: left;
 }
     .menu2 a
     {
-        background-color: lightgray;
         text-decoration: none;
         color: darkred;
     }
@@ -271,6 +268,7 @@ mark
 {
     float: left;
     max-width: 2000px;
+    height: auto;
 }
 
 #body
@@ -1103,4 +1101,24 @@ tr.pager td
                 padding-top: 20px;
                 line-height: 32px;
             }
+nav.content-wrapper1{
+    width: 700px;
+    height: auto;
+}
 
+/* Impressum */
+.impressum{
+    margin-top: -110px;
+    text-decoration: none;
+}
+
+/* Datenschutzerklärung */
+.Datenschutzerklärung{
+    margin-top: -360px;
+    margin-left: 330px;
+    text-decoration: none;
+}
+
+nav.content-wrapper{
+    float:left;
+}

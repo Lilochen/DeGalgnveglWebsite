@@ -1,5 +1,4 @@
-﻿@inherits System.Web.Mvc.WebViewPage<dynamic>
-
+﻿
 @{
     ViewBag.Title = "AboutUsIndex";
 }
@@ -11,7 +10,7 @@
         @ViewBag.Message;
     </title>
 </head>
-<body>
+<body">
     @section featured {
         <section class="featured">
             <div class="content-wrapper">
@@ -20,41 +19,44 @@
                 </hgroup>
                 <p>
                     <nav class="content-wrapper">
-                        <span class="menu2" style="margin-right:50px">
-                            @Html.ActionLink("Igor Worjaz", "IgorWorjaz", "AboutUs")<br />
-                        </span>
-                        <br />
-                        <span class="menu2" style="margin-right:50px">
-                            @Html.ActionLink("Steapa Snotor", "SteapaSnotor", "AboutUs")<br />
-                        </span>
-                        <br />
-                        <span class="menu2" style="margin-right:50px" >
-                            @Html.ActionLink("Liselotte von Zellrudndorff", "LiselotteVonZellrudndorff", "AboutUs")<br />
-                        </span>
-                        <br />
-                        <span class="menu2" style="margin-right:50px">
-                            @Html.ActionLink("Lamia die Sanfte", "LamiaDieSanfte", "AboutUs")<br />
-                        </span>
-                        <br />
-                        <span class="menu2" style="margin-right:50px">
-                            @Html.ActionLink("Simon", "Simon", "AboutUs")<br />
-                        </span>
-                        <br />
-                        <span class="menu2" style="margin-right:50px">
-                            @Html.ActionLink("Grygr", "Grygr", "AboutUs")<br />
-                        </span>
-                        <br />
-                        <span class="menu2" style="margin-right:50px">
-                            @Html.ActionLink("Pater Judas", "PaterJudas", "AboutUs")<br />
-                        </span>
-                        <br />
-                        @Html.ActionLink("zurück", "Index", "Home")<br/>
+                        <nav class="content-wrapper1">
+                            <span class="menu2" style="margin-right:50px">
+                                @Html.ActionLink("Igor Worjaz", "IgorWorjaz", "AboutUs")<br />
+                            </span>
+                            <br />
+                            <span class="menu2" style="margin-right:50px">
+                                @Html.ActionLink("Steapa Snotor", "SteapaSnotor", "AboutUs")<br />
+                            </span>
+                            <br />
+                            <span class="menu2" style="margin-right:50px">
+                                @Html.ActionLink("Liselotte von Zellrudndorff", "LiselotteVonZellrudndorff", "AboutUs")<br />
+                            </span>
+                            <br />
+                            <span class="menu2" style="margin-right:50px">
+                                @Html.ActionLink("Lamia die Sanfte", "LamiaDieSanfte", "AboutUs")<br />
+                            </span>
+                            <br />
+                            <span class="menu2" style="margin-right:50px">
+                                @Html.ActionLink("Simon", "Simon", "AboutUs")<br />
+                            </span>
+                            <br />
+                            <span class="menu2" style="margin-right:50px">
+                                @Html.ActionLink("Grygr", "Grygr", "AboutUs")<br />
+                            </span>
+                            <br />
+                            <span class="menu2" style="margin-right:50px">
+                                @Html.ActionLink("Pater Judas", "PaterJudas", "AboutUs")<br />
+                            </span>
+                            <br />
+                            @Html.ActionLink("zurück", "Index", "Home")<br />
+                        </nav>
+
                     </nav>
                 </p>
             </div>
         </section>
     }
-</body>
+    </body>
 </html>
 <script type="text/javascript">
 
