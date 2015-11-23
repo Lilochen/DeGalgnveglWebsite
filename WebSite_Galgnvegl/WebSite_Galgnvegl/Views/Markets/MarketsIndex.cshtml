@@ -22,38 +22,34 @@
                 <table>
                     <tr>
                         <th>
-                            @*@Html.DisplayNameFor(model => model.Date_from)*@
                             Datum (von)
                         </th>
                         <th>
-                            @*@Html.DisplayNameFor(model => model.Date_to)*@
                             (bis)
                         </th>
-                        <th>
-                            @*@Html.DisplayNameFor(model => model.Marketname)*@
+                        <th>                            
                             Markt
                         </th>
                         <th>
-                            @*@Html.DisplayNameFor(model => model.Location)*@
                             Ort
                         </th>
                     </tr>
 
-                    @foreach (var item in Model)
+                    @foreach (var item in Model.Where(i => i.Date_to > DateTime.Now).OrderBy(i => i.Date_from))
                     {
                         <tr>
                             <td>
-                                @Html.DisplayFor(modelItem => item.Date_from.To )
+                                @item.Date_from.ToString("dd.MM.yyyy")
                             </td>       
                             <td>
-                                @Html.DisplayFor(modelItem => item.Date_to)
+                                @item.Date_to.ToString("dd.MM.yyyy")
+                            </td>
+                            <td>                               
+                                <a href="@item.URL">@item.Marketname</a>
+                                
                             </td>
                             <td>
-                                @*<a href="@System.Web.Mvc.Html.DisplayFor(modelItem => item.URL)">@Html.DisplayFor(modelItem => item.Marketname)</a>*@
-                                @Html.DisplayFor(modelItem => item.Marketname)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Location)
+                                @item.Location
                             </td>  
                         </tr>
                     }

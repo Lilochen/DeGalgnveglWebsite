@@ -13,7 +13,9 @@ namespace WebSite_Galgnvegl.Models
         public DateTime Date_to { get; set; }
         public string Marketname { get; set; }
         public string Location { get; set; }
-        public string URL { get; set; }         
+        public string URL { get; set; }
+        //https://msdn.microsoft.com/de-de/data/jj193542.aspx
+        //Für Änderungen migrieren! Link folgen!!!
     }
 
     public class MarketDBContent : DbContext
