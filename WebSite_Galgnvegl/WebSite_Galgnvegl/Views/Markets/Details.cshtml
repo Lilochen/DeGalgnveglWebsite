@@ -1,0 +1,43 @@
+﻿@model WebSite_Galgnvegl.Models.Marketdatabase
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Marketdatabase</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Date_from)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Date_from)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Date_to)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Date_to)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Marketname)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Marketname)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Location)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Location)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

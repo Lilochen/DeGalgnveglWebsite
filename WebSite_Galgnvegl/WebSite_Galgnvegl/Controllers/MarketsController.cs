@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -9,20 +11,21 @@ namespace WebSite_Galgnvegl.Controllers
 {
     public class MarketsController : Controller
     {
+        private MarketDBContent db = new MarketDBContent();
+
         //
         // GET: /Markets/
 
-        WebSite_Galgnvegl.Models.SharedModel model = new Models.SharedModel();
-        public ActionResult Index()
+        public ActionResult MarketsIndex()
         {
-            return View();
-        }
+            ViewBag.Message = "Hier könnt ihr uns treffen";
+            return View(db.Markets.ToList());
+        }      
 
-        public ActionResult MarketIndex()
+        protected override void Dispose(bool disposing)
         {
-            ViewBag.Message = "Hier könnt ihr uns treffen:";
-            return View(new SharedModel());
+            db.Dispose();
+            base.Dispose(disposing);
         }
-
     }
 }

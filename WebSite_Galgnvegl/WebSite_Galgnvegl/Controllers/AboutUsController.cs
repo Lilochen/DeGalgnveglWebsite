@@ -46,9 +46,9 @@ namespace WebSite_Galgnvegl.Controllers
             return View();
         }
 
-        public ActionResult Simon()
+        public ActionResult SimonDerFeurige()
         {
-            ViewBag.Message = "Simon";
+            ViewBag.Message = "Simon der Feurige";
             return View();
         }
 

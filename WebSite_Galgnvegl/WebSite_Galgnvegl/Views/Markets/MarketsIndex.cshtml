@@ -1,0 +1,69 @@
+﻿@model IEnumerable<WebSite_Galgnvegl.Models.Marketdatabase>
+
+@{
+    ViewBag.Title = "Märkte";
+}
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <title>
+        @ViewBag.Message;
+    </title>
+</head>
+<body>
+    @section featured {
+        <section class="featured">
+            <div class="content-wrapper">
+                <hgroup class="title">
+                    <h1>@ViewBag.Message</h1>
+                </hgroup>
+
+                <table>
+                    <tr>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.Date_from)*@
+                            Datum (von)
+                        </th>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.Date_to)*@
+                            (bis)
+                        </th>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.Marketname)*@
+                            Markt
+                        </th>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.Location)*@
+                            Ort
+                        </th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Date_from.To )
+                            </td>       
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Date_to)
+                            </td>
+                            <td>
+                                @*<a href="@System.Web.Mvc.Html.DisplayFor(modelItem => item.URL)">@Html.DisplayFor(modelItem => item.Marketname)</a>*@
+                                @Html.DisplayFor(modelItem => item.Marketname)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Location)
+                            </td>  
+                        </tr>
+                    }
+
+                </table>
+            </div>
+        </section>
+    }
+</body>
+</html>
+<script type="text/javascript">
+
+</script>

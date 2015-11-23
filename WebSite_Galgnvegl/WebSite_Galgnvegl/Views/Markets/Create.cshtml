@@ -1,0 +1,60 @@
+﻿@model WebSite_Galgnvegl.Models.Marketdatabase
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Marketdatabase</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Date_from)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Date_from)
+            @Html.ValidationMessageFor(model => model.Date_from)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Date_to)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Date_to)
+            @Html.ValidationMessageFor(model => model.Date_to)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Marketname)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Marketname)
+            @Html.ValidationMessageFor(model => model.Marketname)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Location)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Location)
+            @Html.ValidationMessageFor(model => model.Location)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

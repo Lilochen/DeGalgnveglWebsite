@@ -151,14 +151,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Marketdatabase.cs" />
     <Compile Include="Models\SharedModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\dbMarkt.mdf" />
-    <Content Include="App_Data\dbMarkt_log.ldf">
-      <DependentUpon>dbMarkt.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -248,7 +245,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Contact\ContactIndex.cshtml" />
-    <Content Include="Views\Markets\MarketIndex.cshtml" />
     <Content Include="Views\Representation\RepresentationIndex.cshtml" />
     <Content Include="Views\Representation\AsHealer.cshtml" />
     <Content Include="Views\Representation\AsExecuter.cshtml" />
@@ -270,7 +266,7 @@
     <Content Include="Views\AboutUs\LamiaDieSanfte.cshtml" />
     <Content Include="Views\AboutUs\LiselotteVonZellrudndorff.cshtml" />
     <Content Include="Views\AboutUs\PaterJudas.cshtml" />
-    <Content Include="Views\AboutUs\Simon.cshtml" />
+    <Content Include="Views\AboutUs\SimonDerFeurige.cshtml" />
     <Content Include="Views\AboutUs\SteapaSnotor.cshtml" />
     <Content Include="Views\Offer\Camp.cshtml" />
     <Content Include="Views\Offer\ChainsOfFaith.cshtml" />
@@ -279,8 +275,11 @@
     <Content Include="Views\Offer\Theater.cshtml" />
     <Content Include="Views\Offer\Workshop.cshtml" />
     <Content Include="Views\PictureGallery\PictureGallery.cshtml" />
+    <Content Include="Views\Markets\MarketsIndex.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
