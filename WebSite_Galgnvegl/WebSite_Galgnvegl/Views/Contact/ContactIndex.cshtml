@@ -1,6 +1,20 @@
-﻿@{
+﻿@*@using Microsoft.Web.Helpers;*@
+@{
     //Lilo
     ViewBag.Title = "Kontakt";
+    //ReCaptcha.PublicKey = "6LdHHhMTAAAAAOSsp5QPOaKm9IsaUzQC9tYcJMkt";
+    //ReCaptcha.PrivateKey = "6LdHHhMTAAAAADlKXhiWg7bAOUuWVBILPqd2x5Oe";
+    //var showRecaptcha = true;
+    //if (IsPost)
+    //{
+    //    if (ReCaptcha.Validate())
+    //    {
+    //        showRecaptcha = false;
+    //    }
+    //    else
+    //    {
+    //    }
+    //}
 }
 
 <!DOCTYPE html>
@@ -12,10 +26,13 @@
     </title>
 </head>
 <body>
+
+
     @section featured {
         <section class="featured">
             <div class="content-wrapper">
-                <form method="post" action="mailto:degalgenvegl@gmail.com">
+
+                <form action="" method="post">
                     <hgroup class="title">
                         <h1>@ViewBag.Message</h1>
                     </hgroup>
@@ -40,57 +57,69 @@
                         <label for="taMessage">Nachricht: </label>
                         <textarea name="taMessage" id="taMessage" col="5" rows="10" overflow="scroll" required></textarea>
                     </p>
-                    <form name="review" ACTION="newpg.html" METHOD="POST" onsubmit="return checkform(this);" required>
-                        <font color="#DD0000">Enter Code ></font> <span id="txtCaptchaDiv" style="background-color:#A51D22;color:#FFF;padding:5px"></span>
-                        <input type="hidden" id="txtCaptcha" />
-                        <input type="text" name="txtInput" id="txtInput" size="15" />
-                    </form>
+                    @*<div>
+                            @if (showRecaptcha == true)
+                            {
+                                if (!string.IsNullOrWhiteSpace(ReCaptcha.PrivateKey))
+                                {
+                                    <p>
+                                        You can get your public and private keys at
+                                        the ReCaptcha.Net website (http://recaptcha.net).
+                                        Then add the keys to the _AppStart.cshtml file.
+                                    </p>
+                                    <p>@ReCaptcha.GetHtml()</p>
+                                   // <input type="submit" value="Senden!" onclick="SendMail()" />
+                                }
+                            }
+                        </div>*@
                     <p>
-                        <input type="submit" id="sbSend" name="sbSend" value="Senden!" onklick="return send_EMail(this);" />
+                        <input type="button" id="tbSend" name="tbSend" value="Senden!" onclick="SendMail()" />
                     </p>
                 </form>
             </div>
         </section>
     }
     <script type="text/javascript">
-        function checkform(theform){
-            var why = "";
-            if(theform.txtInput.value == ""){
-                why += "- Security code should not be empty.\n";
-            }
-            if(theform.txtInput.value != ""){
-                if(ValidCaptcha(theform.txtInput.value) == false){
-                    why += "- Security code did not match.\n";
-                }
-            }
-            if(why != ""){
-                alert(why);
-                return false;
-            }
+        function SendAjaxRequest(dataobject, serviceURL) {
+            $.ajax({
+                type: "POST",
+                url: serviceURL,
+                data: JSON.stringify(dataobject),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: addSuccess,
+                error: addError
+            });
         }
-        //Generates the captcha function
-        var a = Math.ceil(Math.random() * 9)+ '';
-        var b = Math.ceil(Math.random() * 9)+ '';
-        var c = Math.ceil(Math.random() * 9)+ '';
-        var d = Math.ceil(Math.random() * 9)+ '';
-        var e = Math.ceil(Math.random() * 9)+ '';
-        var code = a + b + c + d + e;
-        document.getElementById("txtCaptcha").value = code;
-        document.getElementById("txtCaptchaDiv").innerHTML = code;
-        // Validate the Entered input aganist the generated security code function
-        function ValidCaptcha(){
-            var str1 = removeSpaces(document.getElementById('txtCaptcha').value);
-            var str2 = removeSpaces(document.getElementById('txtInput').value);
-            if (str1 == str2) {
-                return true;
-            } else {
-                printf("Sie haben die Falsche Zahlenfolge eingegeben. Bitte versuchen Sie es nochmal.");
-                return false;
-                }
+        function addSuccess(Result) {
+            if (Result.result == true) {
+                alert("E-Mail wurde versendet.");
             }
-            // Remove the spaces from the entered and generated code
-            function removeSpaces(string){
-            return string.split(' ').join('');
+            else { alert("Fehler beim Senden der E-Mail."); }
+        }
+
+        function addError(Result, status) {
+            alert("Ein unbekanter Fehler ist aufgetreten.");
+        }
+        function SendMail() {
+            var serviceURL = '/Contact/SendEMail';
+            var dataobject = {
+                Mail_Subject: document.getElementById("tbSubject").value,
+                Mail_Message: document.getElementById("taMessage").value,
+                Mail_Name: document.getElementById("tbName").value,
+                Mail_Tel: document.getElementById("telTel").value,
+                Mail_To: document.getElementById("mbToEMail").value
+            }
+
+            $.ajax({
+                type: "POST",
+                url: serviceURL,
+                data: JSON.stringify(dataobject),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: addSuccess,
+                error: addError
+            });
         }
     </script>
 </body>

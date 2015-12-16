@@ -165,6 +165,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Marketdatabase.cs" />
+    <Compile Include="Models\Result.cs" />
     <Compile Include="Models\SharedModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
