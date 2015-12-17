@@ -1,32 +1,12 @@
-﻿@*@using Microsoft.Web.Helpers;*@
+﻿@using BotDetect.Web.UI.Mvc;
+
 @{
     //Lilo
-    ViewBag.Title = "Kontakt";
-    //ReCaptcha.PublicKey = "6LdHHhMTAAAAAOSsp5QPOaKm9IsaUzQC9tYcJMkt";
-    //ReCaptcha.PrivateKey = "6LdHHhMTAAAAADlKXhiWg7bAOUuWVBILPqd2x5Oe";
-    //var showRecaptcha = true;
-    //if (IsPost)
-    //{
-    //    if (ReCaptcha.Validate())
-    //    {
-    //        showRecaptcha = false;
-    //    }
-    //    else
-    //    {
-    //    }
-    //}
+    
 }
-
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="utf-8">
-    <title>
-        @ViewBag.Message;
-    </title>
-</head>
-<body>
-
+@section styles {
+    <link href="@BotDetect.Web.CaptchaUrls.Absolute.LayoutStyleSheetUrl" rel="stylesheet" type="text/css" />
+}
 
     @section featured {
         <section class="featured">
@@ -39,11 +19,14 @@
                     <p>
                     <p id="pName">
                         <label for="tbName">Name: </label>
-                        <input type="text" id="tbName" name="tbName" value="" required />
+                        <input type="text" id="tbName" name="tbName" value="" />
+                        <label id="EmptyName" class="field-validation-valid">Name ist erforderlich</label>
                     </p>
                     <p id="pEMail">
                         <label for="mbToEMail">E-Mail: </label>
-                        <input type="email" id="mbToEMail" name="mbToEMail" value="" required />
+                        <input type="email" id="mbToEMail" name="mbToEMail" value="" />
+                        <label id="EmptyMailAdress" class="field-validation-valid">E-Mail ist erforderlich</label>
+                        <label id="WrongMailAdress" class="field-validation-valid">Falsche E-Mail-Adresse (z.B. JemandesEMail@example.de)</label>
                     </p>
                     <p id="pTelefon">
                         <label for="telTel">Telefon (Angabe freiwillig): </label>
@@ -51,51 +34,61 @@
                     </p>
                     <p id="pSubject">
                         <label for="tbSubject">Betreff: </label>
-                        <input type="text" id="tbSubject" name="tbSubject" value="" required />
+                        <input type="text" id="tbSubject" name="tbSubject" value="" />
+                        <label id="EmptySubject" class="field-validation-valid">Betreff ist erforderlich</label>
                     </p>
                     <p id="pMessage">
                         <label for="taMessage">Nachricht: </label>
                         <textarea name="taMessage" id="taMessage" col="5" rows="10" overflow="scroll" required></textarea>
+                        <label id="EmptyMessage" class="field-validation-valid">Nachricht ist erforderlich</label>
                     </p>
-                    @*<div>
-                            @if (showRecaptcha == true)
-                            {
-                                if (!string.IsNullOrWhiteSpace(ReCaptcha.PrivateKey))
-                                {
-                                    <p>
-                                        You can get your public and private keys at
-                                        the ReCaptcha.Net website (http://recaptcha.net).
-                                        Then add the keys to the _AppStart.cshtml file.
-                                    </p>
-                                    <p>@ReCaptcha.GetHtml()</p>
-                                   // <input type="submit" value="Senden!" onclick="SendMail()" />
-                                }
-                            }
-                        </div>*@
+                    <p>
+                        @*Captcha einfügen*@
+                        @*<div class="g-recaptcha" data-sitekey="6LdHHhMTAAAAAOSsp5QPOaKm9IsaUzQC9tYcJMkt"></div>*@
+                        @{ MvcCaptcha sampleCaptcha = new MvcCaptcha("SampleCaptcha"); }
+                        @Html.Captcha(sampleCaptcha)
+                        @Html.TextBox("CaptchaCode")
+                    </p>
                     <p>
                         <input type="button" id="tbSend" name="tbSend" value="Senden!" onclick="SendMail()" />
+                        <input type="submit" id="Submit" value="Nachricht senden!" />
                     </p>
                 </form>
             </div>
         </section>
     }
+
+@section scripts {
     <script type="text/javascript">
-        function SendAjaxRequest(dataobject, serviceURL) {
-            $.ajax({
-                type: "POST",
-                url: serviceURL,
-                data: JSON.stringify(dataobject),
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                success: addSuccess,
-                error: addError
-            });
+        function ChangeClassToValid()
+        {
+            $("#EmptyName").addClass("field-validation-valid");
+            $("#EmptyName").removeClass("field-validation-error");
+
+            $("#EmptyMailAdress").addClass("field-validation-valid");
+            $("#EmptyMailAdress").removeClass("field-validation-error");
+
+            $("#WrongMailAdress").addClass("field-validation-valid");
+            $("#WrongMailAdress").removeClass("field-validation-error");
+
+            $("#EmptySubject").addClass("field-validation-valid");
+            $("#EmptySubject").removeClass("field-validation-error");
+
+            $("#EmptyMessage").addClass("field-validation-valid");
+            $("#EmptyMessage").removeClass("field-validation-error");
         }
+
         function addSuccess(Result) {
             if (Result.result == true) {
                 alert("E-Mail wurde versendet.");
             }
-            else { alert("Fehler beim Senden der E-Mail."); }
+            else {
+                var tmparray = Result.message.split(",");
+                for (var i = 0; i < tmparray.length; i++) {
+                    $("#" + tmparray[i]).addClass("field-validation-error");
+                    $("#" + tmparray[i]).removeClass("field-validation-valid");
+                }
+            }
         }
 
         function addError(Result, status) {
@@ -110,7 +103,7 @@
                 Mail_Tel: document.getElementById("telTel").value,
                 Mail_To: document.getElementById("mbToEMail").value
             }
-
+            ChangeClassToValid();
             $.ajax({
                 type: "POST",
                 url: serviceURL,
@@ -122,5 +115,4 @@
             });
         }
     </script>
-</body>
-</html>
+}
