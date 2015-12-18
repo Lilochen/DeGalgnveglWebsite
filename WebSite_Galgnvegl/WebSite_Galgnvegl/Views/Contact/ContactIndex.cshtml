@@ -1,9 +1,10 @@
 ﻿@using BotDetect.Web.UI.Mvc;
+@model WebSite_Galgnvegl.Models.SharedModel
 
 @{
     //Lilo
-    
 }
+
 @section styles {
     <link href="@BotDetect.Web.CaptchaUrls.Absolute.LayoutStyleSheetUrl" rel="stylesheet" type="text/css" />
 }
@@ -11,8 +12,7 @@
     @section featured {
         <section class="featured">
             <div class="content-wrapper">
-
-                <form action="" method="post">
+                <form action="POST">
                     <hgroup class="title">
                         <h1>@ViewBag.Message</h1>
                     </hgroup>
@@ -44,14 +44,14 @@
                     </p>
                     <p>
                         @*Captcha einfügen*@
-                        @*<div class="g-recaptcha" data-sitekey="6LdHHhMTAAAAAOSsp5QPOaKm9IsaUzQC9tYcJMkt"></div>*@
-                        @{ MvcCaptcha sampleCaptcha = new MvcCaptcha("SampleCaptcha"); }
-                        @Html.Captcha(sampleCaptcha)
-                        @Html.TextBox("CaptchaCode")
+
+                        @Html.Captcha(Model.myCaptcha)
+                           @*@Html.Captcha(Model.myCaptcha)*@                                      
+                           <input type="text" id="CaptchaCode" />
+                            <label id="Bot" class="field-validation-valid">Bitte löse das Captcha.</label>
                     </p>
                     <p>
                         <input type="button" id="tbSend" name="tbSend" value="Senden!" onclick="SendMail()" />
-                        <input type="submit" id="Submit" value="Nachricht senden!" />
                     </p>
                 </form>
             </div>
@@ -94,15 +94,20 @@
         function addError(Result, status) {
             alert("Ein unbekanter Fehler ist aufgetreten.");
         }
-        function SendMail() {
+        function SendMail()
+        {
             var serviceURL = '/Contact/SendEMail';
             var dataobject = {
                 Mail_Subject: document.getElementById("tbSubject").value,
                 Mail_Message: document.getElementById("taMessage").value,
                 Mail_Name: document.getElementById("tbName").value,
                 Mail_Tel: document.getElementById("telTel").value,
-                Mail_To: document.getElementById("mbToEMail").value
+                Mail_To: document.getElementById("mbToEMail").value,
+                CaptchaCode: document.getElementById("CaptchaCode").value,
+                vcid: document.getElementById("LBD_VCID_SampleCaptcha").value
             }
+            document.getElementById("CaptchaCode").value = "";
+
             ChangeClassToValid();
             $.ajax({
                 type: "POST",
@@ -113,6 +118,9 @@
                 success: addSuccess,
                 error: addError
             });
+
+           
+            //window.location.href = "Url.Action("ContactIndex", "Contact")";
         }
     </script>
 }
