@@ -47,9 +47,18 @@
 
                 </table>
             </div>
+            @*Anzeigen der Login/Logoutbuttons*@
             <div>
-                @Html.ActionLink("LogIn", "Login", "Account")
-            </div>
+                @if (Request.IsAuthenticated)
+                {
+                    <strong>@Html.Encode(User.Identity.Name)</strong>
+                    @Html.ActionLink("Abmelden", "Logout", "Account")
+                }
+                else
+                {
+                    @Html.ActionLink("Anmelden", "Login", "Account")
+                }
+            </div>    
         </section>
     }
 

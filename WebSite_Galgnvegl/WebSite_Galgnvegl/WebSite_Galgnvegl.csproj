@@ -320,6 +320,7 @@
     <Content Include="Views\PictureGallery\PictureGallery.cshtml" />
     <Content Include="Views\Markets\MarketsIndex.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Markets\MarketsInterna.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -337,6 +338,12 @@
     <EmbeddedResource Include="Migrations\201512290935226_AddAccountTag.resx">
       <DependentUpon>201512290935226_AddAccountTag.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Helpers\Helpers.csproj">
+      <Project>{2844917d-c781-48dc-849f-8cdc2943c3c7}</Project>
+      <Name>Helpers</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

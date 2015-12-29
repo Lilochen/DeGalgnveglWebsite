@@ -1,0 +1,5 @@
+C:\Users\Luisa Enders\Documents\Projects\Github\Website_DeGalgnvegl\DeGalgnveglWebsite\WebSite_Galgnvegl\Helpers\bin\Debug\Helpers.dll
+C:\Users\Luisa Enders\Documents\Projects\Github\Website_DeGalgnvegl\DeGalgnveglWebsite\WebSite_Galgnvegl\Helpers\bin\Debug\Helpers.pdb
+C:\Users\Luisa Enders\Documents\Projects\Github\Website_DeGalgnvegl\DeGalgnveglWebsite\WebSite_Galgnvegl\Helpers\obj\Debug\Helpers.csprojResolveAssemblyReference.cache
+C:\Users\Luisa Enders\Documents\Projects\Github\Website_DeGalgnvegl\DeGalgnveglWebsite\WebSite_Galgnvegl\Helpers\obj\Debug\Helpers.dll
+C:\Users\Luisa Enders\Documents\Projects\Github\Website_DeGalgnvegl\DeGalgnveglWebsite\WebSite_Galgnvegl\Helpers\obj\Debug\Helpers.pdb
