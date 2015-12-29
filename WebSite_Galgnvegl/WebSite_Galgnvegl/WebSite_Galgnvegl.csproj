@@ -168,6 +168,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AboutUsController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MarketsController.cs" />
@@ -186,10 +187,16 @@
     <Compile Include="Migrations\201511230924223_MArketURL.Designer.cs">
       <DependentUpon>201511230924223_MArketURL.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512290935226_AddAccountTag.cs" />
+    <Compile Include="Migrations\201512290935226_AddAccountTag.Designer.cs">
+      <DependentUpon>201512290935226_AddAccountTag.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountDatabase.cs" />
     <Compile Include="Models\Marketdatabase.cs" />
     <Compile Include="Models\Result.cs" />
     <Compile Include="Models\SharedModel.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -312,6 +319,7 @@
     <Content Include="Views\Offer\Workshop.cshtml" />
     <Content Include="Views\PictureGallery\PictureGallery.cshtml" />
     <Content Include="Views\Markets\MarketsIndex.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -325,6 +333,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201511230924223_MArketURL.resx">
       <DependentUpon>201511230924223_MArketURL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512290935226_AddAccountTag.resx">
+      <DependentUpon>201512290935226_AddAccountTag.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
