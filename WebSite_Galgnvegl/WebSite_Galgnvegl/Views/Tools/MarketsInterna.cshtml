@@ -1,6 +1,8 @@
-﻿@model IEnumerable<WebSite_Galgnvegl.Models.Marketdatabase>
+﻿@model WebSite_Galgnvegl.Models.PickColor
 @{
-    ViewBag.Title = "Interner Berreich";
+
+    @*@model IEnumerable<WebSite_Galgnvegl.Models.Marketdatabase>*@
+    ViewBag.Title = "Interner Bereich";
 }
 @section featured{
         <section class="featured">
@@ -32,9 +34,17 @@
 
                     </tr>
 
-                    @foreach (var item in Model.Where(i => i.Date_to > DateTime.Now).OrderBy(i => i.Date_from))
-                    {
-                        <tr>
+                    @foreach (var item in Model.marketdbcontext.Markets.Where(i => i.Date_to > DateTime.Now).OrderBy(i => i.Date_from))
+                    { 
+                        <tr style="background-color: @for (int i = 0; i <= Model.Colors.Length; i++)
+                                       {
+                                                         if(Model.marketdatabase.AccountTag == Model.Colors[i])
+                                                         {
+                                                             background-color: @Model.Colors[i]
+                                                         }                                           
+                                       }
+                                       
+                                   }>
                             <td>
                                 @item.Date_from.ToString("dd.MM.yyyy")
                             </td>
@@ -62,7 +72,6 @@
                             </td>
                         </tr>
                     }
-
                 </table>
             </div>
 

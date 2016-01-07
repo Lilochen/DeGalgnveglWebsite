@@ -35,9 +35,15 @@
                             <td>
                                 @item.Date_to.ToString("dd.MM.yyyy")
                             </td>
-                            <td>                               
-                                <a href="@item.URL">@item.Marketname</a>
-                                
+                            <td>
+                                @if (string.IsNullOrWhiteSpace(item.URL))
+                                {
+                                    @item.Marketname
+                                }
+                                else
+                                {
+                                    <a href="@item.URL">@item.Marketname</a>
+                                }
                             </td>
                             <td>
                                 @item.Location

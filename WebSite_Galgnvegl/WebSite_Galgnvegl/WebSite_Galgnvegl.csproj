@@ -192,17 +192,31 @@
     <Compile Include="Migrations\201512290935226_AddAccountTag.Designer.cs">
       <DependentUpon>201512290935226_AddAccountTag.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201601070734091_AddPromoter.cs" />
-    <Compile Include="Migrations\201601070734091_AddPromoter.Designer.cs">
-      <DependentUpon>201601070734091_AddPromoter.cs</DependentUpon>
+    <Compile Include="Migrations\201601070813031_AddInfo_and_Promoter.cs" />
+    <Compile Include="Migrations\201601070813031_AddInfo_and_Promoter.Designer.cs">
+      <DependentUpon>201601070813031_AddInfo_and_Promoter.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201601070738327_AddInfo.cs" />
-    <Compile Include="Migrations\201601070738327_AddInfo.Designer.cs">
-      <DependentUpon>201601070738327_AddInfo.cs</DependentUpon>
+    <Compile Include="Migrations\201601070831344_AddAccountColor.cs" />
+    <Compile Include="Migrations\201601070831344_AddAccountColor.Designer.cs">
+      <DependentUpon>201601070831344_AddAccountColor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601071118468_AddColor.cs" />
+    <Compile Include="Migrations\201601071118468_AddColor.Designer.cs">
+      <DependentUpon>201601071118468_AddColor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601071121350_RemoveColor.cs" />
+    <Compile Include="Migrations\201601071121350_RemoveColor.Designer.cs">
+      <DependentUpon>201601071121350_RemoveColor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601071227268_ChangeVeranstalter\Information.cs" />
+    <Compile Include="Migrations\201601071228021_ChangeVeranstalter_Information.cs" />
+    <Compile Include="Migrations\201601071228021_ChangeVeranstalter_Information.Designer.cs">
+      <DependentUpon>201601071228021_ChangeVeranstalter_Information.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountDatabase.cs" />
     <Compile Include="Models\Marketdatabase.cs" />
+    <Compile Include="Models\PickColor.cs" />
     <Compile Include="Models\Result.cs" />
     <Compile Include="Models\SharedModel.cs" />
     <Compile Include="Models\User.cs" />
@@ -348,11 +362,20 @@
     <EmbeddedResource Include="Migrations\201512290935226_AddAccountTag.resx">
       <DependentUpon>201512290935226_AddAccountTag.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201601070734091_AddPromoter.resx">
-      <DependentUpon>201601070734091_AddPromoter.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201601070813031_AddInfo_and_Promoter.resx">
+      <DependentUpon>201601070813031_AddInfo_and_Promoter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201601070738327_AddInfo.resx">
-      <DependentUpon>201601070738327_AddInfo.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201601070831344_AddAccountColor.resx">
+      <DependentUpon>201601070831344_AddAccountColor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601071118468_AddColor.resx">
+      <DependentUpon>201601071118468_AddColor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601071121350_RemoveColor.resx">
+      <DependentUpon>201601071121350_RemoveColor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601071228021_ChangeVeranstalter_Information.resx">
+      <DependentUpon>201601071228021_ChangeVeranstalter_Information.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

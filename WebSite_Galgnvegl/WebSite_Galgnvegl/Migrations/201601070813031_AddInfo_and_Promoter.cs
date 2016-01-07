@@ -3,7 +3,7 @@ namespace WebSite_Galgnvegl.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddInfo : DbMigration
+    public partial class AddInfo_and_Promoter : DbMigration
     {
         public override void Up()
         {

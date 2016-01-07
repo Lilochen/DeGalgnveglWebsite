@@ -19,12 +19,6 @@ namespace WebSite_Galgnvegl.Controllers
             return View(db.Markets.ToList());
         }
 
-        public ActionResult MarketsInterna()
-        {
-            ViewBag.Message = "Hier könnt ihr uns treffen";
-            return View(db.Markets.ToList());
-        } 
-
         protected override void Dispose(bool disposing)
         {
             db.Dispose();

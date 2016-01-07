@@ -12,8 +12,6 @@ namespace WebSite_Galgnvegl.Controllers
         //
         // GET: /Account/
 
-        //private AccountDBContent db = new AccountDBContent();
-
         public ActionResult Index()
         {
             return View();
@@ -23,7 +21,6 @@ namespace WebSite_Galgnvegl.Controllers
         public ActionResult Login()
         {
             return View();
-            //return View(db.Accounts.ToList());
         }
 
         [HttpPost]

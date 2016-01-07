@@ -7,13 +7,13 @@ namespace WebSite_Galgnvegl.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddInfo : IMigrationMetadata
+    public sealed partial class RemoveColor : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddInfo));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(RemoveColor));
         
         string IMigrationMetadata.Id
         {
-            get { return "201601070738327_AddInfo"; }
+            get { return "201601071121350_RemoveColor"; }
         }
         
         string IMigrationMetadata.Source

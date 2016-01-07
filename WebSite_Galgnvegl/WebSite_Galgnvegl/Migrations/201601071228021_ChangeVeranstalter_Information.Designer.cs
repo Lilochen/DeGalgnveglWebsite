@@ -7,13 +7,13 @@ namespace WebSite_Galgnvegl.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddPromoter : IMigrationMetadata
+    public sealed partial class ChangeVeranstalter_Information : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddPromoter));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ChangeVeranstalter_Information));
         
         string IMigrationMetadata.Id
         {
-            get { return "201601070734091_AddPromoter"; }
+            get { return "201601071228021_ChangeVeranstalter_Information"; }
         }
         
         string IMigrationMetadata.Source

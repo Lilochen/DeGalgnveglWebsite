@@ -20,4 +20,6 @@ namespace WebSite_Galgnvegl.Models
         public DbSet<AccountDatabase> Accounts { get; set; }
     }
 
+
+
 }
