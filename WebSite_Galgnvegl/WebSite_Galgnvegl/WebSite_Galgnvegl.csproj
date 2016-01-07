@@ -176,6 +176,7 @@
     <Compile Include="Controllers\PictureGalleryController.cs" />
     <Compile Include="Controllers\RepresentationController.cs" />
     <Compile Include="Controllers\SharedController.cs" />
+    <Compile Include="Controllers\ToolsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -190,6 +191,14 @@
     <Compile Include="Migrations\201512290935226_AddAccountTag.cs" />
     <Compile Include="Migrations\201512290935226_AddAccountTag.Designer.cs">
       <DependentUpon>201512290935226_AddAccountTag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601070734091_AddPromoter.cs" />
+    <Compile Include="Migrations\201601070734091_AddPromoter.Designer.cs">
+      <DependentUpon>201601070734091_AddPromoter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601070738327_AddInfo.cs" />
+    <Compile Include="Migrations\201601070738327_AddInfo.Designer.cs">
+      <DependentUpon>201601070738327_AddInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountDatabase.cs" />
@@ -320,7 +329,8 @@
     <Content Include="Views\PictureGallery\PictureGallery.cshtml" />
     <Content Include="Views\Markets\MarketsIndex.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Markets\MarketsInterna.cshtml" />
+    <Content Include="Views\Tools\MarketsInterna.cshtml" />
+    <Content Include="Views\Tools\CodeGenerator.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -337,6 +347,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512290935226_AddAccountTag.resx">
       <DependentUpon>201512290935226_AddAccountTag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601070734091_AddPromoter.resx">
+      <DependentUpon>201601070734091_AddPromoter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601070738327_AddInfo.resx">
+      <DependentUpon>201601070738327_AddInfo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

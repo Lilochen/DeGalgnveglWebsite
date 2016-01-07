@@ -15,6 +15,8 @@ namespace WebSite_Galgnvegl.Models
         public string Location { get; set; }
         public string URL { get; set; }
         public int AccountTag { get; set; }
+        public string Promoter { get; set; }
+        public string Info { get; set; }
         //https://msdn.microsoft.com/de-de/data/jj193542.aspx
         //Für Änderungen migrieren! Link folgen!!!
     }

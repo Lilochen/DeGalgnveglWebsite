@@ -32,7 +32,7 @@ namespace WebSite_Galgnvegl.Controllers
             if (user.IsValid(user.UserName, user.Password))
             {
                 FormsAuthentication.SetAuthCookie(user.UserName, user.RememberMe);
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("MarketsInterna", "Tools");
             }
             else
             {
@@ -44,7 +44,7 @@ namespace WebSite_Galgnvegl.Controllers
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Login", "Account");
         }
     }
 }

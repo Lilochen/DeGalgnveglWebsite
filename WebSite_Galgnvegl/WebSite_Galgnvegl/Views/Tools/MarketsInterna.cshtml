@@ -1,0 +1,70 @@
+﻿@model IEnumerable<WebSite_Galgnvegl.Models.Marketdatabase>
+@{
+    ViewBag.Title = "Interner Berreich";
+}
+@section featured{
+        <section class="featured">
+            <div class="content-wrapper">
+                <hgroup class="title">
+                    <h1>@ViewBag.Message</h1>
+                </hgroup>
+
+                <table>
+                    <tr>
+                        <th>
+                            Datum (von)
+                        </th>
+                        <th>
+                            (bis)
+                        </th>
+                        <th>
+                            Markt
+                        </th>
+                        <th>
+                            Ort
+                        </th>
+                        <th>
+                            Veranstalter
+                        </th>
+                        <th>
+                            Info
+                        </th>
+
+                    </tr>
+
+                    @foreach (var item in Model.Where(i => i.Date_to > DateTime.Now).OrderBy(i => i.Date_from))
+                    {
+                        <tr>
+                            <td>
+                                @item.Date_from.ToString("dd.MM.yyyy")
+                            </td>
+                            <td>
+                                @item.Date_to.ToString("dd.MM.yyyy")
+                            </td>
+                            <td>
+                                @if(string.IsNullOrWhiteSpace(item.URL))
+                                {
+                                    @item.Marketname
+                                }
+                                else
+                                { 
+                                <a href="@item.URL">@item.Marketname</a>
+                                }
+                            </td>
+                            <td>
+                                @item.Location
+                            </td>
+                            <td>
+                                @item.Promoter
+                            </td>
+                            <td>
+                                @item.Info
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
+
+        </section>
+    }

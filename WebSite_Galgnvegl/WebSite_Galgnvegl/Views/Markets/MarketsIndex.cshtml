@@ -26,8 +26,8 @@
                         </th>
                     </tr>
 
-                    @foreach (var item in Model.Where(i => i.Date_to > DateTime.Now).OrderBy(i => i.Date_from))
-                    {
+                    @foreach (var item in Model.Where(i => i.Date_to > DateTime.Now && i.AccountTag == 6).OrderBy(i => i.Date_from))
+                    {           
                         <tr>
                             <td>
                                 @item.Date_from.ToString("dd.MM.yyyy")
@@ -46,19 +46,7 @@
                     }
 
                 </table>
-            </div>
-            @*Anzeigen der Login/Logoutbuttons*@
-            <div>
-                @if (Request.IsAuthenticated)
-                {
-                    <strong>@Html.Encode(User.Identity.Name)</strong>
-                    @Html.ActionLink("Abmelden", "Logout", "Account")
-                }
-                else
-                {
-                    @Html.ActionLink("Anmelden", "Login", "Account")
-                }
-            </div>    
+            </div> 
         </section>
     }
 

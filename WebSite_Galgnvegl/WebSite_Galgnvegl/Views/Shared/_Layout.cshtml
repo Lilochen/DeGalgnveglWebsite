@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@{
+    bool IsAuth = (System.Web.HttpContext.Current.User.Identity.IsAuthenticated != null) && (System.Web.HttpContext.Current.User.Identity.IsAuthenticated);
+}
+<!DOCTYPE html>
 <html lang="de">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -9,6 +12,7 @@
     @Styles.Render("~/Content/css")
     @RenderSection("styles", required: false)
     @Scripts.Render("~/bundles/modernizr")
+
 </head>
 <body>
     <header>
@@ -24,6 +28,18 @@
                     <img src="~/Images/Kette_ganz_klein.jpg" />
                 </span>
             </div>
+            @*Anzeigen der Login/Logoutbuttons*@
+            <div>
+                @if (Request.IsAuthenticated)
+                {
+                    <strong>@Html.Encode(User.Identity.Name)</strong>
+                    @Html.ActionLink("Abmelden", "Logout", "Account")
+                }
+                else
+                {
+                    @Html.ActionLink("Anmelden", "Login", "Account")
+                }
+            </div>    
         </div>
     </header>
     <div id="body">
@@ -53,18 +69,29 @@
             <span class="menu1" style="margin-right:50px">
                 @Html.ActionLink("Bildergalerie", "PictureGalleryIndex", "PictureGallery")
             </span>
-            <br />            
+            @*<br />            
             <span class="menu1" style="margin-right:50px">
                 <a href="http://www.guestbook-free.com/books3/degalgnvegl/">Gästebuch</a>
                 @*Nicht schön, aber selten*@
-            </span>
+            @*</span>*@
             <br />
             <span class="menu1" style="margin-right:50px">
                 @Html.ActionLink("Kontakt", "ContactIndex", "Contact")
             </span>
+            @if (IsAuth)
+            {
+                <br />
+                <span class="menu1" style="margin-right:50px">
+                    @Html.ActionLink("Interne Marktabelle", "MarketsInterna", "Tools")
+                </span>
+                <br />
+                 <span class="menu1" style="margin-right:50px">
+                     @Html.ActionLink("Gutscheincodegenerator", "CodeGenerator", "Tools")
+                 </span>
+            }
         </nav>
     </div>
-    @*  </div>*@
+
     @RenderSection("featured", required: false)
 
     <section class="content-wrapper main-content clear-fix">
